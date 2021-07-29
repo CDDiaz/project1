@@ -17,6 +17,7 @@
 </ul>
 
 <div class="controls">
+  <%= button_to 'Select Workout', { :action => 'select' }, :data => { :confirm => 'Are you sure?'} %>
   <%= link_to 'Edit Workout', edit_workout_path(@workout) %>
   <%= link_to 'Delete Workout', @workout, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
 </div>

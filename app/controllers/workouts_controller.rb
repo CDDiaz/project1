@@ -26,6 +26,10 @@ class WorkoutsController < ApplicationController
 
   def show
     @workout = Workout.find params[:id]
+    def select
+      @current_user.workout = @workout
+      redirect_to user_path(@current_user)
+    end
   end
 
   def destroy
@@ -33,6 +37,8 @@ class WorkoutsController < ApplicationController
     workout.destroy
     redirect_to workouts_path
   end
+
+
 
   private
   def workout_params

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :workouts
   resources :exercises
 
+  post '/workouts/select' => 'workouts#select'
+
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
