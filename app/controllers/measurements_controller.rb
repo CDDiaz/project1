@@ -3,6 +3,7 @@ class MeasurementsController < ApplicationController
 
   def index
     @measurements = Measurement.all
+    @counter = 0
   end
 
   def new

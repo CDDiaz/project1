@@ -1,21 +1,21 @@
-<h1>Exercises #show</h1>
 <h1><%= @exercise.name %></h1>
 
 
 <ul>
   <li>Body Area: <%= @exercise.body_area %></li>
   <li>Description: <%= @exercise.description %></li>
-  <li>Video: <%= @exercise.video %></li>
   <li>Found in:
     <% @exercise.workouts.each do |exercise| %>
       <ul>
         <li><%= exercise.name %></li>
       </ul>
     <% end %> </li>
+  <li>Video:</li>
+  <%= get_video_iframe(@exercise.video) %>
 </ul>
 
 
-<%= get_video_iframe(@exercise.video) %>
+
 
 
 <div class="controls">

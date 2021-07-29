@@ -1,15 +1,23 @@
-<h1>All Measurements # Index</h1>
+<h1>Body Measurement Data for <%= @current_user.name %> </h1>
+
 
 <div class="container">
+  <h3>Body Weight Line Chart</h3>
+  <%= line_chart @current_user.measurements.group_by_hour(:created_at).maximum(:weight)  %>
   <% @measurements.each do |measurement| %>
     <% if measurement.user_id == @current_user.id %>
-      <h1><%= measurement.user.name %></h1>
+      <h3>
+        <% @counter = @counter + 1 %>
+        <%= link_to "Entry ##{ @counter }", measurement%>
+      </h3>
       <ul>
-        <li>Weight: <%= measurement.weight %></li>
-        <li>Height: <%= measurement.height %></li>
-        <li>Body-fat: <%= measurement.body_fat %></li>
+        <li>Weight: <%= measurement.weight %> kg</li>
+        <li>Height: <%= measurement.height %> cm</li>
+        <% if measurement.body_fat.present? %>
+          <li>Body-fat: <%= measurement.body_fat %> %</li>
+        <% end %>
+        <li>Created at: <%= measurement.created_at.strftime '%l:%M %p - %B %e, %Y' %></li>
       </ul>
-      <%= link_to measurement.created_at, measurement %>
     <% end %>
   <% end %>
 </div>

@@ -1,12 +1,14 @@
-<h1>Measurements#show</h1>
-<h1><%= @measurement.user.name %></h1>
-<h2><%= @measurement.created_at %></h2>
+<h1>Entry View</h1>
+
+<h2><%= @measurement.created_at.strftime '%l:%M %p - %B %e, %Y' %> </h2>
 
 <ul>
-  <li>Weight: <%= @measurement.weight %></li>
-  <li>Height: <%= @measurement.height %></li>
-  <li>Body-fat: <%= @measurement.body_fat %></li>
+  <li>Weight: <%= @measurement.weight %> kg</li>
+  <li>Height: <%= @measurement.height %> cm</li>
+  <li>Body-fat: <%= @measurement.body_fat %> %</li>
 </ul>
+
+
 
 <div class="controls">
   <%= link_to 'Edit Measurement', edit_measurement_path(@measurement) %>

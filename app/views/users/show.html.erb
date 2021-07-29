@@ -1,16 +1,16 @@
-<h1>User # Show</h1>
+<h1>My Profile - <%= @current_user.email %></h1>
 
-<h1><%= @current_user.email %></h1>
 
 <ul>
   <li>Email: <%= @current_user.email %></li>
   <li>Name: <%= @current_user.name %></li>
   <li>Surname: <%= @current_user.surname %></li>
-  <li>Date of Birth: <%= @current_user.dob %></li>
+  <li>Date of Birth: <%= @current_user.dob.strftime '%A, %B %e, %Y' %></li>
   <li>Phone: <%= @current_user.phone %></li>
   <% if @current_user.workout.present? %>
-  <li>Current workout: <%= @current_user.workout.name %></li>
+  <li>Current workout: <%= link_to @current_user.workout.name, workout_path(@current_user.workout) %></li>
   <% end %>
+  <li>Joined: <%= @current_user.created_at.strftime '%B %e, %Y' %></li>
 </ul>
 
 <div class="controls">

@@ -1,7 +1,4 @@
-<h1>Workouts #show</h1>
 <h1><%= @workout.name %></h1>
-
-
 
 <ul>
   <li>Category: <%= @workout.category %></li>
@@ -10,7 +7,7 @@
   <li>Exercises:
   <% @workout.exercises.each do |workout| %>
     <ul>
-      <li><%= workout.name %></li>
+      <li><%= link_to workout.name, exercise_path(workout) %></li>
     </ul>
   <% end %>
    </li>
