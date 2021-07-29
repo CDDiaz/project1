@@ -14,6 +14,10 @@
     <% end %> </li>
 </ul>
 
+
+<%= get_video_iframe(@exercise.video) %>
+
+
 <div class="controls">
   <%= link_to 'Edit Exercise', edit_exercise_path(@exercise) %>
   <%= link_to 'Delete Exercise', @exercise, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
