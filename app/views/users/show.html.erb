@@ -5,7 +5,7 @@
   <li>Email: <%= @current_user.email %></li>
   <li>Name: <%= @current_user.name %></li>
   <li>Surname: <%= @current_user.surname %></li>
-  <li>Date of Birth: <%= @current_user.dob.strftime '%A, %B %e, %Y' %></li>
+  <li>Date of Birth: <%= @current_user.dob.strftime '%A, %B %e, %Y' if @current_user.dob.present? %></li>
   <li>Phone: <%= @current_user.phone %></li>
   <% if @current_user.workout.present? %>
   <li>Current workout: <%= link_to @current_user.workout.name, workout_path(@current_user.workout) %></li>
