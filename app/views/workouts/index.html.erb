@@ -1,0 +1,15 @@
+<h1>Workouts # Index</h1>
+
+<div class="container">
+  <% @workouts.each do |workout| %>
+    <ul>
+      <li><%= link_to workout.name, workout %></li>
+    </ul>
+  <% end %>
+</div>
+
+<div>
+    <h2>
+      <%= link_to 'New Workout', new_workout_path %>
+    </h2>
+</div>

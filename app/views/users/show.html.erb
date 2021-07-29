@@ -1,0 +1,16 @@
+<h1>User # Show</h1>
+
+<h1><%= @current_user.email %></h1>
+
+<ul>
+  <li>Email: <%= @current_user.email %></li>
+  <li>Name: <%= @current_user.name %></li>
+  <li>Surname: <%= @current_user.surname %></li>
+  <li>Date of Birth: <%= @current_user.dob %></li>
+  <li>Phone: <%= @current_user.phone %></li>
+  <li>Current workout: <%= @current_user.workout.name %></li>
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit Profile', edit_user_path(@current_user) %>
+</div>

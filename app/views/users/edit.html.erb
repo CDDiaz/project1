@@ -1,0 +1,26 @@
+<h1>Edit Profile</h1>
+
+<% if @current_user.errors.any? %>
+  <ol>
+    <% @current_user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ol>
+<% end %>
+<%= form_for @current_user do |f| %>
+  <%= f.label :email %>
+  <%= f.email_field :email, :required => true %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :surname %>
+  <%= f.text_field :surname %>
+  <%= f.label :dob %>
+  <%= f.date_field :dob %>
+  <%= f.label :phone %>
+  <%= f.phone_field :phone %>
+
+  <%= f.label :workout_id %>
+  <%= f.select :workout_id, Workout.pluck(:name, :id), :include_blank => true %>
+
+  <%= f.submit "Submit" %>
+<% end %>

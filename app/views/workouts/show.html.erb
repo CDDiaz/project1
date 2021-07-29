@@ -1,0 +1,22 @@
+<h1>Workouts #show</h1>
+<h1><%= @workout.name %></h1>
+
+
+
+<ul>
+  <li>Category: <%= @workout.category %></li>
+  <li>Age range: <%= @workout.age_range %></li>
+  <li>Description: <%= @workout.description %></li>
+  <li>Exercises:
+  <% @workout.exercises.each do |workout| %>
+    <ul>
+      <li><%= workout.name %></li>
+    </ul>
+  <% end %>
+   </li>
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit Workout', edit_workout_path(@workout) %>
+  <%= link_to 'Delete Workout', @workout, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+</div>

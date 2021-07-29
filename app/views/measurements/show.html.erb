@@ -1,0 +1,14 @@
+<h1>Measurements#show</h1>
+<h1><%= @measurement.user.name %></h1>
+<h2><%= @measurement.created_at %></h2>
+
+<ul>
+  <li>Weight: <%= @measurement.weight %></li>
+  <li>Height: <%= @measurement.height %></li>
+  <li>Body-fat: <%= @measurement.body_fat %></li>
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit Measurement', edit_measurement_path(@measurement) %>
+  <%= link_to 'Delete Measurement', @measurement, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+</div>

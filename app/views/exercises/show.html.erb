@@ -1,0 +1,20 @@
+<h1>Exercises #show</h1>
+<h1><%= @exercise.name %></h1>
+
+
+<ul>
+  <li>Body Area: <%= @exercise.body_area %></li>
+  <li>Description: <%= @exercise.description %></li>
+  <li>Video: <%= @exercise.video %></li>
+  <li>Found in:
+    <% @exercise.workouts.each do |exercise| %>
+      <ul>
+        <li><%= exercise.name %></li>
+      </ul>
+    <% end %> </li>
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit Exercise', edit_exercise_path(@exercise) %>
+  <%= link_to 'Delete Exercise', @exercise, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+</div>

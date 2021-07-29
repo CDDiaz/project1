@@ -1,0 +1,21 @@
+<h1>All Measurements # Index</h1>
+
+<div class="container">
+  <% @measurements.each do |measurement| %>
+    <% if measurement.user_id == @current_user.id %>
+      <h1><%= measurement.user.name %></h1>
+      <ul>
+        <li>Weight: <%= measurement.weight %></li>
+        <li>Height: <%= measurement.height %></li>
+        <li>Body-fat: <%= measurement.body_fat %></li>
+      </ul>
+      <%= link_to measurement.created_at, measurement %>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+    <h2>
+      <%= link_to 'New Measurement', new_measurement_path %>
+    </h2>
+</div>
