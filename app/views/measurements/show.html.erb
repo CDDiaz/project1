@@ -1,16 +1,22 @@
-<h1>Entry View</h1>
+<div class="container">
+  <h1>Entry View</h1>
+</div>
 
-<h2><%= @measurement.created_at.strftime '%l:%M %p - %B %e, %Y' %> </h2>
+<div class="container">
+  <h2><%= @measurement.created_at.strftime '%l:%M %p - %B %e, %Y' %> </h2>
+</div>
 
-<ul>
-  <li>Weight: <%= @measurement.weight %> kg</li>
-  <li>Height: <%= @measurement.height %> cm</li>
-  <li>Body-fat: <%= @measurement.body_fat %> %</li>
-</ul>
+<div class="container">
+  <ul>
+    <li>Weight: <%= @measurement.weight %> kg</li>
+    <li>Height: <%= @measurement.height %> cm</li>
+    <li>Body-fat: <%= @measurement.body_fat %> %</li>
+  </ul>
+</div>
 
-
-
-<div class="controls">
-  <%= link_to 'Edit Measurement', edit_measurement_path(@measurement) %>
-  <%= link_to 'Delete Measurement', @measurement, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
+<div class="container">
+  <div class="controls">
+    <%= link_to 'Edit Measurement', edit_measurement_path(@measurement), :class => 'btn btn-outline-primary' %>
+    <%= link_to 'Delete Measurement', @measurement, :method => 'delete', :data => { :confirm => 'Are you sure?'}, :class => 'btn btn-outline-primary' %>
+  </div>
 </div>

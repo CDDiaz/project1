@@ -1,5 +1,6 @@
-<h1>Body Measurement Data for <%= @current_user.name %> </h1>
-
+<div class="container">
+  <h1>Body Measurement Data for <%= @current_user.name %> </h1>
+</div>
 
 <div class="container">
   <h3>Body Weight Line Chart</h3>
@@ -22,8 +23,8 @@
   <% end %>
 </div>
 
-<div>
+<div class="container">
     <h2>
-      <%= link_to 'New Measurement', new_measurement_path %>
+      <%= link_to 'New Measurement', new_measurement_path, :class => 'btn btn-outline-primary' %>
     </h2>
 </div>

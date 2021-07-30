@@ -1,4 +1,6 @@
-<h1>Workout Plans</h1>
+<div class="container">
+  <h1>Workout Plans</h1>
+</div>
 
 <div class="container">
   <% @workouts.each do |workout| %>
@@ -8,8 +10,8 @@
   <% end %>
 </div>
 
-<div>
-    <h3>
-      <%= link_to 'Create a Workout Plan', new_workout_path %>
-    </h3>
+<div class="container">
+  <h3>
+    <%= link_to 'Create a Workout Plan', new_workout_path, :class => 'btn btn-outline-primary' %>
+  </h3>
 </div>

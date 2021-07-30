@@ -1,23 +1,31 @@
-<h1><%= @workout.name %></h1>
+<div class="container">
+  <h1><%= @workout.name %></h1>
+</div>
 
-<ul>
-  <li>Category: <%= @workout.category %></li>
-  <li>Age range: <%= @workout.age_range %></li>
-  <li>Description: <%= @workout.description %></li>
-  <li>Exercises:
-  <% @workout.exercises.each do |workout| %>
-    <ul>
-      <li><%= link_to workout.name, exercise_path(workout) %></li>
-    </ul>
-  <% end %>
-   </li>
-</ul>
+<div class="container">
+  <ul>
+    <li>Category: <%= @workout.category %></li>
+    <li>Age range: <%= @workout.age_range %></li>
+    <li>Description: <%= @workout.description %></li>
+    <li>Exercises:
+    <% @workout.exercises.each do |workout| %>
+      <ul>
+        <li><%= link_to workout.name, exercise_path(workout) %></li>
+      </ul>
+    <% end %>
+     </li>
+  </ul>
+</div>
 
-<div class="controls">
-  <div class="container">
-    <%= button_to 'Select Workout', { :action => 'select' }, :data => { :confirm => 'Are you sure?'}, :class => 'btn btn-outline-primary' %>
+<div class="container">
+  <div class="controls">
+    <div class="container mb-4">
+      <%= button_to 'Select Workout', { :action => 'select' }, :data => { :confirm => 'Are you sure?'}, :class => 'btn btn-outline-primary' %>
+    </div>
+
+    <div class="container">
+      <%= link_to 'Edit Workout', edit_workout_path(@workout), :class => 'btn btn-outline-primary' %>
+      <%= link_to 'Delete Workout', @workout, :method => 'delete', :data => { :confirm => 'Are you sure?'}, :class => 'btn btn-outline-primary' %>
+    </div>
   </div>
-
-  <%= link_to 'Edit Workout', edit_workout_path(@workout) %>
-  <%= link_to 'Delete Workout', @workout, :method => 'delete', :data => { :confirm => 'Are you sure?'} %>
 </div>

@@ -1,14 +1,21 @@
-<h1>Log In</h1>
+<div class="container">
+  <h1>Log In</h1>
+</div>
 
-<%= form_tag login_path do %>
+<div class="container">
+  <%= form_tag login_path do %>
+      <div class="form-group">
+        <%= label_tag :email %>
+        <%= email_field_tag :email, nil, :class => 'form-control' %>
+      </div>
 
-    <%= label_tag :email %>
-    <%= email_field_tag :email, nil, :class => 'form-control' %>
+      <div class="form-group">
+        <%= label_tag :password %>
+        <%= password_field_tag :password, nil, :class => 'form-control' %>
+      </div>
 
-    <%= label_tag :password %>
-    <%= password_field_tag :password, nil, :class => 'form-control' %>
-
-  <%= submit_tag "Sign In", :class => 'btn btn-info' %>
-
-
-<% end %>
+      <div class="form-group">
+        <%= submit_tag "Sign In", :class => 'btn btn-outline-primary' %>
+      </div>
+  <% end %>
+</div>

@@ -1,11 +1,29 @@
-<h1>Hardcore Workouts</h1>
+<div class="container">
+  <h1>Hardcore Workouts</h1>
+</div>
 
 <div class="container">
-  <p>
+  <h4>
     <% if @current_user.present? %>
     You are logged in as <%= @current_user.email %>
     <% else %>
     Please log in or sign up!
     <% end %>
-  </p>
+  </h4>
+</div>
+
+<div class="container mb-4 mt-4">
+  <h5>
+    Find the best workout routines and training plans for you to do at home or in the gym. Choose from killer Inferno and MAX workouts, single exercises, cardio, lower-body workouts, and more!
+  </h5>
+</div>
+
+<div class="container mb-4 mt-4">
+  <h5>
+    Whether you’re into bodybuilding, power lifting, strength training or just getting started, these workouts and tips will help you reach your goals.
+  </h5>
+</div>
+
+<div class="container">
+  <iframe style="display: block; margin: auto;" width="560" height="315" src="https://www.youtube.com/embed/s8hWQwFwayo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
 </div>
