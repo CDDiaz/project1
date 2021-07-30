@@ -1,4 +1,6 @@
-<h1>All Exercises</h1>
+<div class="container">
+  <h1>All Exercises</h1>
+</div>
 
 <div class="container">
   <% @exercises.each do |exercise| %>
@@ -8,8 +10,8 @@
   <% end %>
 </div>
 
-<div>
-    <h2>
-      <%= link_to 'Add a New Exercise', new_exercise_path %>
-    </h2>
+<div class="container">
+  <h2>
+    <%= link_to 'Add a New Exercise', new_exercise_path %>
+  </h2>
 </div>

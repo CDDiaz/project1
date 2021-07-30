@@ -1,9 +1,11 @@
 <h1>Hardcore Workouts</h1>
 
-<p>
-  <% if @current_user.present? %>
-  You are logged in as <%= @current_user.email %>
-  <% else %>
-  Please log in or sign up!
-  <% end %>
-</p>
+<div class="container">
+  <p>
+    <% if @current_user.present? %>
+    You are logged in as <%= @current_user.email %>
+    <% else %>
+    Please log in or sign up!
+    <% end %>
+  </p>
+</div>

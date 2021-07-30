@@ -1,13 +1,18 @@
 <%= form_for @measurement do |f| %>
-  <%= f.label :weight %>
-  <%= f.text_field :weight %>
 
-  <%= f.label :height %>
-  <%= f.text_field :height %>
-
-  <%= f.label :body_fat %>
-  <%= f.text_field :body_fat %>
-
-  <%= f.submit %>
-
+  <div class="form-group">
+    <%= f.label :weight %>
+    <%= f.text_field :weight, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :height %>
+    <%= f.text_field :height, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :body_fat %>
+    <%= f.text_field :body_fat, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+      <%= f.submit class: 'btn btn-outline-primary' %>
+  </div>
 <% end %>

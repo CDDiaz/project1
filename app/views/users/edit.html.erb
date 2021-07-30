@@ -1,26 +1,43 @@
 <h1>Edit Profile</h1>
 
-<% if @current_user.errors.any? %>
-  <ol>
-    <% @current_user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ol>
-<% end %>
-<%= form_for @current_user do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email, :required => true %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :surname %>
-  <%= f.text_field :surname %>
-  <%= f.label :dob %>
-  <%= f.date_field :dob %>
-  <%= f.label :phone %>
-  <%= f.phone_field :phone %>
+<div class="container">
+  <% if @current_user.errors.any? %>
+    <ol>
+      <% @current_user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ol>
+  <% end %>
+</div>
 
-  <%= f.label :workout_id %>
-  <%= f.select :workout_id, Workout.pluck(:name, :id), :include_blank => true %>
-
-  <%= f.submit "Submit" %>
-<% end %>
+<div class="container">
+  <%= form_for @current_user do |f| %>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, :required => true, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :surname %>
+      <%= f.text_field :surname, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :dob %>
+      <%= f.date_field :dob, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :phone %>
+      <%= f.phone_field :phone, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :workout_id %>
+      <%= f.select :workout_id, Workout.pluck(:name, :id), :include_blank => true, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Submit", :class => 'btn btn-outline-primary' %>
+    </div>
+  <% end %>
+</div>

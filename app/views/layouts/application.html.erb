@@ -12,22 +12,49 @@
 
   <body>
     <div class="container">
-      <nav>
-        <%=  link_to 'Home', root_path %>
-        <% if @current_user.present?  %>
-          <% if @current_user.admin? %>
-            <%= link_to 'Admin-Panel', users_path %>
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <div class="navbar-brand">
+            <%=  link_to 'Home', root_path %>
+          </div>
+
+          <% if @current_user.present?  %>
+            <% if @current_user.admin? %>
+              <div class="navbar-brand">
+                <%= link_to 'Admin-Panel', users_path %>
+              </div>
+            <% end %>
+            <div class="navbar-brand">
+              <%=  link_to 'Profile', user_path(@current_user) %>
+            </div>
+            <div class="navbar-brand">
+              <%=  link_to 'Measurements', measurements_path %>
+            </div>
+            <div class="navbar-brand">
+              <%=  link_to 'Workouts', workouts_path %>
+            </div>
+            <div class="navbar-brand">
+              <%=  link_to 'Exercises', exercises_path %>
+            </div>
+            <div class="navbar-brand">
+              <%=  link_to "Log Out #{ @current_user.email }", login_path, :method => 'delete' %>
+            </div>
+          <% else %>
+            <div class="navbar-brand">
+              <%=  link_to 'Sign up', new_user_path %>
+            </div>
+            <div class="navbar-brand">
+              <%=  link_to 'Log In', login_path %>
+            </div>
           <% end %>
-          <%=  link_to 'Profile', user_path(@current_user) %>
-          <%=  link_to 'Measurements', measurements_path %>
-          <%=  link_to 'Workouts', workouts_path %>
-          <%=  link_to 'Exercises', exercises_path %>
-          <%=  link_to "Log Out #{ @current_user.email }", login_path, :method => 'delete' %>
-        <% else %>
-          <%=  link_to 'Sign up', new_user_path %>
-          <%=  link_to 'Log In', login_path %>
-        <% end %>
+        </div>
       </nav>
+    </div>
+
+    <div class="container">
       <%= yield %>
     </div>
 
